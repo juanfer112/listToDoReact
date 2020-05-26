@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import "../../styles/index.scss";
+import Posts from "./Posts";
 
 class List extends Component {
 	constructor(props) {
@@ -22,15 +23,24 @@ class List extends Component {
 
 	render() {
 		const { btnDeleteClicked, lista, checkDone } = this.props;
-		return lista.map((e, i) => (
-			<p key={i} style={this.styleCompleted()}>
-				{e}
-				<input type="checkbox" onChange={() => checkDone(e)} />
-				<button style={btnDelete} onClick={() => btnDeleteClicked(i)}>
-					x
-				</button>
-			</p>
-		));
+		return (
+			<div>
+				{lista.map((e, i) => (
+					<li
+						key={i}
+						style={this.styleCompleted()}
+						className="list-group-item text-capitalize d-flex justify-content-between my-2">
+						{e}
+						<input type="checkbox" onChange={() => checkDone(e)} />
+						<button
+							style={btnDelete}
+							onClick={() => btnDeleteClicked(i)}>
+							x
+						</button>
+					</li>
+				))}
+			</div>
+		);
 	}
 }
 
