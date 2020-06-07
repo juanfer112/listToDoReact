@@ -74,28 +74,28 @@ export class InputToDo extends React.Component {
 									<div className="input-group-text bg-primary text-white">
 										<i className="fas fa-book" />
 									</div>
+								</div>
 
-									<input
-										className="form-control text-capitalize"
-										type="text"
-										placeholder="TASK TO DO?"
-										onChange={e => {
-											this.setState({
-												...this.state,
-												userInput: e.target.value
-											});
-										}}
-										value={this.state.userInput}
-										onKeyPress={e => this.addToList(e)}
-									/>
-									<div className="input-group-append">
-										<button
-											type="button"
-											className="btn btn-primary"
-											onClick={() => this.btnToList()}>
-											Pincha
-										</button>
-									</div>
+								<input
+									className="form-control text-capitalize"
+									type="text"
+									placeholder="TASK TO DO?"
+									onChange={e => {
+										this.setState({
+											...this.state,
+											userInput: e.target.value
+										});
+									}}
+									value={this.state.userInput}
+									onKeyPress={e => this.addToList(e)}
+								/>
+								<div className="input-group-append">
+									<button
+										type="button"
+										className="btn btn-primary"
+										onClick={() => this.btnToList()}>
+										agregar
+									</button>
 								</div>
 							</div>
 						</div>
