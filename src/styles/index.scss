@@ -47,3 +47,23 @@ p input{
 h1{
     text-align: center;
 }*/
+
+.list-group-item{
+    padding: 0.3rem 1rem;
+}
+
+input[type="checkbox"]{
+    margin:auto 5px auto 0px;
+}
+.item i {
+    color:blue;
+    margin-left: 5px;
+    cursor: pointer;
+      &.grow {
+        transition: all .2s ease-in-out;
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+}
+

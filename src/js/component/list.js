@@ -29,14 +29,19 @@ class List extends Component {
 					<li
 						key={i}
 						style={this.styleCompleted()}
-						className="list-group-item text-capitalize d-flex justify-content-between my-2">
+						className="list-group-item text-capitalize d-flex justify-content-between mt-2">
 						{e}
-						<input type="checkbox" onChange={() => checkDone(e)} />
-						<button
-							style={btnDelete}
-							onClick={() => btnDeleteClicked(i)}>
-							x
-						</button>
+						<span className="item">
+							<input
+								type="checkbox"
+								onChange={() => checkDone(e)}
+							/>
+
+							<i
+								className="far fa-trash-alt grow"
+								onClick={() => btnDeleteClicked(i)}
+							/>
+						</span>
 					</li>
 				))}
 			</div>

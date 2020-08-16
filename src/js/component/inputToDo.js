@@ -68,7 +68,7 @@ export class InputToDo extends React.Component {
 				<div clasName="row">
 					<div className="col-10 mx-auto col-md-8 mt-4">
 						<h1 className="text-center">LIST TO DO</h1>
-						<div className=" card card-body my-3">
+						<div className=" card card-body mt-2">
 							<div className=" input-group">
 								<div className=" input-group-prepend">
 									<div className="input-group-text bg-primary text-white">
@@ -100,7 +100,7 @@ export class InputToDo extends React.Component {
 							</div>
 						</div>
 
-						<ul className="list-group my-5">
+						<ul className="list-group my-2">
 							<List
 								lista={this.state.list}
 								btnDeleteClicked={this.btnDeleteClicked}
