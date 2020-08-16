@@ -1,15 +1,70 @@
-/*import React from "react";
+/*import React from "react";*/
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-const List = ({ lista, onDeleteClicked }) => {
-	const listaa = lista.map((elemento, index) => {
+import "../../styles/index.scss";
+import Posts from "./Posts";
+
+class List extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			list: [],
+			userInput: ""
+		};
+	}
+	styleCompleted() {
+		return {
+			fontSize: "20px",
+			color: this.props.done ? "gray" : "black",
+			textDecoration: this.props.done ? "line-through" : "none"
+		};
+	}
+
+	render() {
+		const { btnDeleteClicked, lista, checkDone } = this.props;
 		return (
-			<li key={index}>
-				{elemento}
-				<div className="delLi" onClick={() => onDeleteClicked(index)} />
-			</li>
+			<div>
+				{lista.map((e, i) => (
+					<li
+						key={i}
+						style={this.styleCompleted()}
+						className="list-group-item text-capitalize d-flex justify-content-between mt-2">
+						{e}
+						<span className="item">
+							<input
+								type="checkbox"
+								onChange={() => checkDone(e)}
+							/>
+
+							<i
+								className="far fa-trash-alt grow"
+								onClick={() => btnDeleteClicked(i)}
+							/>
+						</span>
+					</li>
+				))}
+			</div>
 		);
-	});
-	return <ul>{listaa}</ul>;
+	}
+}
+
+const btnDelete = {
+	fontSize: "18px",
+	background: "#ea2027",
+	color: "#fff",
+	border: "none",
+	padding: "10px 15px",
+	borderRadius: "50%",
+	cursor: "pointer",
+	float: "rigth"
 };
 
-export default List;*/
+List.propTypes = {
+	lista: PropTypes.any,
+	btnDeleteClicked: PropTypes.any,
+	checkDone: PropTypes.any,
+	done: PropTypes.any
+};
+
+export default List;
