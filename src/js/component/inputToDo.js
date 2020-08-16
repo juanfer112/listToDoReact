@@ -65,10 +65,12 @@ export class InputToDo extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<div clasName="row">
-					<div className="col-10 mx-auto col-md-8 mt-4">
-						<h1 className="text-center">LIST TO DO</h1>
-						<div className=" card card-body mt-2">
+				<div className="row">
+					<div className="col-10 mx-auto col-md-6 mt-4">
+						<h1 className="gradient-multiline">
+							<span>LIST TO DO</span>
+						</h1>
+						<div className="card card-body">
 							<div className=" input-group">
 								<div className=" input-group-prepend">
 									<div className="input-group-text bg-primary text-white">
@@ -79,7 +81,7 @@ export class InputToDo extends React.Component {
 								<input
 									className="form-control text-capitalize"
 									type="text"
-									placeholder="TASK TO DO?"
+									placeholder="TAREAS POR HACER?"
 									onChange={e => {
 										this.setState({
 											...this.state,
@@ -107,6 +109,25 @@ export class InputToDo extends React.Component {
 								done={this.state.done}
 								checkDone={this.checkDone}
 							/>
+							<div>
+								{this.state.list.length == 1 ? (
+									<>
+										Tiene{" "}
+										<strong>
+											{this.state.list.length} Tarea por
+											hacer{" "}
+										</strong>
+									</>
+								) : (
+									<>
+										Tienes{" "}
+										<strong>
+											{this.state.list.length} Tareas por
+											hacer{" "}
+										</strong>
+									</>
+								)}
+							</div>
 						</ul>
 					</div>
 				</div>
